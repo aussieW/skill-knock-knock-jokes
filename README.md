@@ -7,11 +7,11 @@ User: "Hey Mycroft, tell a knock knock"
 
 Mycroft: "knock knock"
 
-User: "Who's there"
+User: "who's there" <<< must be this response
 
 Mycroft: "says"
 
-User: "says who"
+User: "says who" <<< must have the word 'who' somewhere in the response
 
 Mycroft: "says me, that's who"
 
