@@ -37,8 +37,12 @@ class KnockKnockJokesSkill(MycroftSkill):
 		
     def initialize(self):
         # load the jokes from the jokes directory
-        with open(self.path_to_joke_file) as f:
-            self.jokes.append(f.readline().strip().split(':'))
+        #with open(self.path_to_joke_file) as f:
+        #    self.jokes.append(f.readline().strip().split(':'))
+        f = open(self.path_to_joke_file)
+        for line in f.readlines():
+            self.jokes.append(line.strip().split(':'))
+        f.close()
         LOGGER.info('KnockKnockJokesSkill: Available jokes = ' + str(self.jokes))     
 
     @intent_handler(IntentBuilder('handle_tell_joke').require('knock-knock').optionally('joke'))
